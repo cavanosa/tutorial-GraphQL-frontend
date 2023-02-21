@@ -30,8 +30,7 @@ export class BrandsComponent implements OnInit, OnDestroy {
       })
       .valueChanges.subscribe(({ data, loading }) => {
         this.loading = loading;
-        console.log(data.findAllBrands);
-        this.brands = data.findAllBrands;
+        this.brands = data.findAllBrands
       });
   }
 

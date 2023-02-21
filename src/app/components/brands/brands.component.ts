@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Apollo, QueryRef } from 'apollo-angular';
 import { Subscription } from 'rxjs';
 import { GET_BRANDS } from 'src/app/graphql/queries.graphql';
+import { DELETE_BRAND } from 'src/app/graphql/mutations.graphql';
 
 @Component({
   selector: 'app-brands',
@@ -43,6 +44,21 @@ export class BrandsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.querySubscription.unsubscribe();
+  }
+
+  onDelete(id: number): void {
+    this.apollo.mutate({
+      mutation: DELETE_BRAND,
+      variables: {
+        id: id
+      }
+    }).subscribe(() => {
+      this.loadBrands();
+    },
+      err => {
+        alert(err);
+      }
+    )
   }
 
 }

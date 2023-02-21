@@ -15,8 +15,8 @@
             <th scope="row">{{brand.id}}</th>
             <td>{{brand.name}}</td>
             <td><button class="btn btn-outline-primary" routerLink="/models/{{brand.id}}">Models</button></td>
-            <td><button class="btn btn-outline-warning">Edit</button></td>
-            <td><button class="btn btn-outline-danger">Delete</button></td>
+            <td><button class="btn btn-outline-warning" routerLink="/update/{{brand.id}}/{{brand.name}}">Edit</button></td>
+            <td><button class="btn btn-outline-danger" (click)="onDelete(brand.id)">Delete</button></td>
           </tr>
          
         </tbody>

@@ -1,3 +1,4 @@
+import { UpdateComponent } from './components/update/update.component';
 import { CreateComponent } from './components/create/create.component';
 import { ModelsComponent } from './components/models/models.component';
 import { BrandsComponent } from './components/brands/brands.component';
@@ -8,6 +9,7 @@ const routes: Routes = [
   { path: '', component: BrandsComponent },
   { path: 'models/:id', component: ModelsComponent },
   { path: 'create', component: CreateComponent },
+  { path: 'update/:id/:name', component: UpdateComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

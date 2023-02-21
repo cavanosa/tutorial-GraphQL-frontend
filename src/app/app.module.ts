@@ -9,13 +9,15 @@ import { FormsModule } from '@angular/forms';
 import { BrandsComponent } from './components/brands/brands.component';
 import { MenuComponent } from './menu/menu.component';
 import { ModelsComponent } from './components/models/models.component';
+import { CreateComponent } from './components/create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BrandsComponent,
     MenuComponent,
-    ModelsComponent
+    ModelsComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
